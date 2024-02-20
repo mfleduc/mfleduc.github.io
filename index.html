@@ -1,5 +1,49 @@
 <!DOCTYPE html>
 <html>
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+
+</head>
 <body>
 
 <img 
@@ -10,15 +54,55 @@
 
 <h1>Matthew F. LeDuc</h1>
 
-<p>Hello and welcome to my personal site! I am a current PhD student in Applied Mathematics at the University of Colorado. My current research focuses on spatial statistics and inverse problems, working primarily under the guidance of Dr. Tomoko Matsuo in the Geospatial Data Science Lab. I have previously worked in fluids, oceanography, and acoustics.</p>
+<p>Hello and welcome to my personal site! I am a current PhD student in Applied Mathematics at the University of Colorado. My current research focuses on spatial statistics and inverse problems, working primarily under the guidance of Dr. Tomoko Matsuo in the <a href="https://www.colorado.edu/lab/matsuo/" target="_blank">Geospace Data Science Lab.</a> I have previously worked in fluids, oceanography, and acoustics. My github page is located <a href="https://github.com/mfleduc" target="_blank">here</a> and you can find me on LinkedIn <a href="https://www.linkedin.com/in/matthew-leduc-3660baa0" target="_blank">here.</a>
+</p>
 
 <p>Please excuse the mess. I am learning HTML in bits and pieces, and this site will evolve significantly over time. </p>
-  
- <h3>Publications</h3>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Publications and Talks')">Publications and Talks</button>
+  <button class="tablinks" onclick="openTab(event, 'Contact me')">Contact me!</button>
+</div>
+
+<div id="Publications and Talks" class="tabcontent">
+  <h3>Publications</h3>
   <p>Wen B, Goluskin D, LeDuc M, Chini GP, Doering CR. Steady Rayleigh–Bénard convection between stress-free boundaries. Journal of Fluid Mechanics. 2020;905:R4. doi:10.1017/jfm.2020.812</p>
   <h3>Talks</h3>
   <p>Matthew F. LeDuc, Nathan K. Haerr, Chevelle N. Boomershine, James P. Cottingham; Input impedance of sheng pipes augmented with resonators. J. Acoust. Soc. Am. 1 September 2015; 138 (3_Supplement): 1935. https://doi.org/10.1121/1.4934102</p>
+</div>
+<div id="Contact me" class="tabcontent">
+ <h3>Contact information</h3>
+  <p>Email: matthew.leduc@colorado.edu</p>
+ 
+</div>
+  
+ 
+  
+<script>
+function openTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  </script>
+
 </body>
+
 
 </html>
 
