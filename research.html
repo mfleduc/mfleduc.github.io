@@ -7,16 +7,20 @@
 </script>
 </head>
 <body>
-  I am currently working on several different problems related to the dynamics and remote sensing of the ionosphere and thermosphere system. We are particularly interested in the problem of determining thermospheric neutral temperature from far-ultraviolet instruments. 
+  <p>I am currently working on several different problems related to the dynamics and remote sensing of the ionosphere and thermosphere system. We are particularly interested in the problem of determining thermospheric neutral temperature from far-ultraviolet instruments. We are particularly interested in the multiscale structure of these fields and how to properly model them. </p>
+    
+   <p>One of our main tools in this task are needlets. The needlets \(\psi_{jk}\) form a Parseval-tight frame of the Hilbert Space \(\mathcal{L}^2\left(\mathbb{S}^n\right)\). This means that, if \( f\in \mathcal{L}^2\left(\mathbb{S}^n\right) \), there are coefficients \(\beta_{jk}\) such that</p> 
 
-  We are particularly interested in the multiscale structure of these fields and how to properly model them. One of our main tools in this task are needlets. The needlets \(\psi_{jk}\) form a Parseval-tight frame of the Hilbert Space \(\mathcal{L}^2\left(\mathbb{S}^n\right)\). This means that, if \( f\in \mathcal{L}^2\left(\mathbb{S}^n\right) \), there are coefficients \(\beta_{jk}\) such that
-
-  $$
-\sum |\beta_{jk}|^2 = ||f||_2^{2} \\
+$$
+\sum |\beta_{jk}|^2 = ||f||_2^{2} 
+$$
+$$
 \beta_{jk} = \int_{\mathbb{S}^n} f(y) \psi_{jk}(y) \text{d}y
-  $$
+$$
 
-  Our most recent research adds these to a latent Gaussian Process framework, which, along with a Lasso penalty on the precision matrix of the coefficients and a compactly supported covariance model for the residuals, allows us to develop a faithful statistical model of neutral temperature in the lower thermosphere (URL forthcoming).
+Our most recent research adds these to a latent Gaussian Process framework, which, along with a Lasso penalty on the precision matrix of the coefficients and a compactly supported covariance model for the residuals, allows us to develop a faithful statistical model of neutral temperature in the lower thermosphere (URL forthcoming).
+
+<p> In addition to the problem of spatial modeling of these fields, we are also interested in methods for determining the neutral temperature of the thermosphere. Anything in low-Earth orbit moves through the thermosphere, and uncertainty in the drag these objhects experience is the primary driver of uncertainty in their positions. While several methods for determining the neutral temperature from FUV observations exist, we are particularly interested in those that are based on ratios of the intensity of different channels. Work on this front is forthcoming as well.</p>
 </body>
 
 </html>
