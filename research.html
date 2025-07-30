@@ -1,4 +1,4 @@
-<html>
+ly, <html>
 <head>
 <title>Research</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -27,12 +27,12 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
 <p> In addition to the problem of spatial modeling of these fields, we are also interested in methods for determining the neutral temperature of the thermosphere. Anything in low-Earth orbit moves through the thermosphere, and uncertainty in the drag these objects experience is the primary driver of uncertainty in their positions. While several methods for determining the neutral temperature from FUV observations exist, we are particularly interested in those that are based on ratios of the intensity of different channels, which are explored, for example, in <a href="https://amt.copernicus.org/articles/14/6917/2021/">this paper</a> by Clayton Cantrall and Tomoko Matsuo and <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018JA026379">this paper</a> by Yongliang Zhang et al. 
   Currently, we are exploring the application of permanental processes to this problem to allow for extension into a spatial model.
   In permanental processes, the key innovation of the model is that the intensity function is a squared Gaussian process. Because of this it is possible to use reproducing kernel Hilbert space techniques to fit the intensity from the photon counts. 
-   Thisd additionally allows for both guarantees of smoothness through relationships between RKHSs and Sobolev Spaces through the Mercer expansion and the spectrum of the fractional Laplacian, and for accurate quantification of uncertainty. 
+   This additionally allows for both guarantees of smoothness through relationships between RKHSs and Sobolev Spaces through the Mercer expansion and the spectrum of the fractional Laplacian, and for accurate quantification of uncertainty in the intensity ratio. This is done by allowing us to approximate the marginal distribution of the intensity ratio at a given location as a generalized Beta-prime distribution with a good deal of accuracy. 
   Initial results are promising but there is still work to do here. 
   For some background, see <a href="https://proceedings.mlr.press/v54/flaxman17a.html">this paper</a> by Flaxman et al and <a href="https://proceedings.mlr.press/v70/walder17a.html">this paper</a> by Walder and Bishop.  
 </p>
   
- <p>More is coming, but I have been working on an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. It is not yet on CRAN, but it will be shortly.</p> 
+ <p>More is coming, but I have been working on an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. It is not yet on CRAN, but it will be shortly. It also does not yet support the permanental process model, but it does support a pointwise version of the model that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
 </body>
 
 </html>
