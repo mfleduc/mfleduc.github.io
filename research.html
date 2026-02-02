@@ -27,7 +27,7 @@ My research is broad but mostly focused on the modeling of non-Gaussian and non-
    <p>One of the motivating problems for my laboratory is statistical modeling of the ionosphere and thermosphere. These parts of the atmosphere contain satellites in low Earth orbit and their complx dynamics have huge effects on our ability to track these objects and prevent collisions. This section describes some work of mine in developing a statistical model for non-stationary data with multiscale behavior with a specific interest in characterizing the statistical behavior of the thermospheric neutral temperature over the globe.</p>
     
    <p>One of our main tools in this task are <a href="https://academic.oup.com/mnras/article/383/2/539/993257">needlets.</a> The needlets \(\psi_{jk}\) form a Parseval-tight frame of the Hilbert Space \(\mathcal{L}^2\left(\mathbb{S}^n\right)\). This means that, if \( f\in \mathcal{L}^2\left(\mathbb{S}^n\right) \), there are coefficients \(\beta_{jk}\) such that</p> 
-
+<p>
 $$
 f(x) = \sum_{j,k}\beta_{jk}\psi_{jk}(x)
 $$
@@ -40,7 +40,7 @@ $$
 
 This gives Parseval-tight frames the reconstruction properties of orthonormal bases that we know and love, with additional flexibility. Once I figure out how to add a bibliography on here I will do it properly, but for now the book "An Introduction to Frames and Riesz Bases" by Ole Christiansen provides a good overview of frames generally, and the book "Random Fields on the Sphere" by Marinucci and Peccati provides details on needlets specifically. Our most recent research adds these to a latent Gaussian Process framework, which, along with a Lasso penalty on the precision matrix of the coefficients and a compactly supported covariance model for the residuals, allows us to develop a faithful statistical model of neutral temperature in the lower thermosphere (<a href="https://arxiv.org/abs/2505.01318">The paper is currently on ArXiV.</a>). This model was inspired by the work of Krock et al on the <a href="https://www.tandfonline.com/doi/full/10.1080/10618600.2023.2174126">Basis Graphical Lasso</a>
  and the full-scale approximations investigated by <a href="https://www.sciencedirect.com/science/article/abs/pii/S1226319208000045">Michael Stein</a>(although he did not call them full-scale approximations) and <a href="https://doi.org/10.1111/j.1467-9868.2011.01007.x">Sang and Huang</a>, hence the name. The paper is currently under review at Spatial Statistics.
-
+</p>
 </details>
  <details>
   <summary>Novel Algorithms for Remote Sensing</summary>
@@ -52,11 +52,13 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
   Currently, we are exploring the application of permanental processes to this problem to allow for extension into a spatial model.
   In permanental processes, the key innovation of the model is that the intensity function \(\lambda(s) = \frac{c}{2}f(s)^2\) where \(f(s)\) is a Gaussian process. Because of this it is possible to use reproducing kernel Hilbert space techniques to fit the intensity from the photon counts, since the point process likelihood function can be regularized by the RKHS norm. If we bin the data and observe \(m_i\) photons in each bin \(R_i\), the fact that a binned Gaussian process remains a Gaussian process allows us to model the intensity in each bin as a squared (element-wise) latent Gaussian vector. This leads to the regularized likelihood
   </p>
+   <p>
   $$
  \mathcal{L}(f|m) = \sum_{i} m_i\log\left(\frac{c}{2}\vec{f}_i^2\right)-\frac{c}{2}\left<\vec{f},\vec{f}\right>-\frac{\gamma}{2}\left<\vec{f},\mathbf{K}^{-1}\vec{f} \right>
   $$
   where \(\frac{1}{\gamma}\mathbf{K}\) is the covariance matrix of \(\vec{f}\). The inner products can then be combined into an inner product with respect to an equivalent kernel matrix \(\tilde{\mathbf{K}}^{-1}\) and the solution has the form \(\vec{F}=\tilde{\mathbf{K}}\vec{\alpha}\). While thi last step is not structly necessary for binned data, it is critical for raw point proicess data as it turns optimization over a reproducing kernel Hilbert space into one over \(\mathbb{R}^d\). While our method is demonstrated on binned data it is capable of handling both binned and unbinned point process data. 
   Once \(\vec{f}\) is estimated, a Laplace Approximation to the posterior distribution and moment-matching to the distribution of \(\frac{c}{2}\vec{f}^2\) allows one to derive the conditional distribution of the intensity at any point as a Gamma distribution, and the distribution of the ratio, and any linear function thereof, as a generalized Beta-Prime dsitribution. 
+ </p>
    <p>
        In our paper, we demonstrate this algorithm on retrievals of thermospheric effective temperature and show that we are able to obtain accurate estimates of the temperature with good uncertainty quantification while still detecting known spatial structure. The paper is posted <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-5570/">here</a> and is currently under review at Atmospheric Measurement Techniques. This work was also presented at the 2025 AGU fall meeting. The poster is locataed <a href="https://essopenarchive.org/users/988399/articles/1352210-equivalent-kernel-method-for-fuv-inversion-problems-applications-to-nasa-gold-disk-emission-data">here</a>.
  
