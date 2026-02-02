@@ -30,6 +30,8 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
 </details>
  <details>
   <summary>Novel Algorithms for Remote Sensing</summary>
+   Many algorithms for remote sensing rely on ratios of photon counts in disjoint spectral bins. These methods often neglect spatial correlation and make assumptions on the data (such as Gaussianity) that are routinely violated. This project is an effort to unify these methods into a signle inversion framework with efficient and accurate uncertainty quantification that takes into account spatial correlation of emissions. Our motivating example comes from far-ultraviolet remote sensing of the uppper atmosphere.
+   
   Anything in low-Earth orbit moves through the thermosphere, and uncertainty in the drag these objects experience is the primary driver of uncertainty in their positions. While several methods for determining the neutral temperature from FUV observations exist, we are particularly interested in those that are based on ratios of the intensity of different channels, which are explored, for example, in <a href="https://amt.copernicus.org/articles/14/6917/2021/">this paper</a> by Clayton Cantrall and Tomoko Matsuo and <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018JA026379">this paper</a> by Yongliang Zhang et al. 
   Currently, we are exploring the application of permanental processes to this problem to allow for extension into a spatial model.
   In permanental processes, the key innovation of the model is that the intensity function \(\lambda(s) = \frac{c}{2}f(s)^2\) where \(f(s)\) is a Gaussian process. Because of this it is possible to use reproducing kernel Hilbert space techniques to fit the intensity from the photon counts, since the point process likelihood function can be regularized by the RKHS norm. If we bin the data and observe \(m_i\) photons in each bin \(R_i\), the fact that a binned Gaussian process remains a Gaussian process allows us to model the intensity in each bin as a squared (element-wise) latent Gaussian vector. This leads to the regularized likelihood
@@ -43,7 +45,17 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
   For some background, see <a href="https://proceedings.mlr.press/v54/flaxman17a.html">this paper</a> by Flaxman et al and <a href="https://proceedings.mlr.press/v70/walder17a.html">this paper</a> by Walder and Bishop. Details about determining temperature from ratios of FUV channels are available <a href="https://amt.copernicus.org/articles/14/6917/2021/">here</a>.
   The method is implemented in an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. I am currently working on the package documentation, which will be posted soon. It supports the permanental process model for binned point process data, as well as a pointwise model that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
  </details>
-  
-  
+  <details>
+  <summary>A class of wavelets for the unit disk with Gegenbauer measure</summary>
+    Coming soon!
+  </details>
+  <details>
+  <summary>A Physically motivated stochastic model for tropical cyclone wind vector fields</summary>
+    Coming soon!
+  </details>
+   <details>
+  <summary>Analysis of interstellar dust composition</summary>
+    Coming soon!
+  </details>
  </body>
 </html>
