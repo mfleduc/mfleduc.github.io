@@ -61,13 +61,14 @@ details {
   border: 1px solid #aaaaaa;
   border-radius: 4px;
   padding: 0.5em 0.5em 0;
+   background-color: #ccc;
 }
 
 summary {
   font-weight: bold;
   margin: -0.5em -0.5em 0;
   padding: 0.5em;
-  background-color: #ccc;
+ 
 }
 
 
