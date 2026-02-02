@@ -28,15 +28,9 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
  and the full-scale approximations investigated by <a href="https://www.sciencedirect.com/science/article/abs/pii/S1226319208000045">Michael Stein</a>(although he did not call them full-scale approximations) and <a href="https://doi.org/10.1111/j.1467-9868.2011.01007.x">Sang and Huang</a>, hence the name. The paper is currently under review.
 
 </details>
-
-</div> 
- <button type="button" class="collapsible">Novel Algorithms for Remote Sensing</button>
-<div class="content">
-  <p>Lorem ipsum...</p>
-</div> 
-  
-  
-<p> In addition to spatial modeling of these fields, we are also interested in methods for determining the neutral temperature of the thermosphere. Anything in low-Earth orbit moves through the thermosphere, and uncertainty in the drag these objects experience is the primary driver of uncertainty in their positions. While several methods for determining the neutral temperature from FUV observations exist, we are particularly interested in those that are based on ratios of the intensity of different channels, which are explored, for example, in <a href="https://amt.copernicus.org/articles/14/6917/2021/">this paper</a> by Clayton Cantrall and Tomoko Matsuo and <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018JA026379">this paper</a> by Yongliang Zhang et al. 
+ <details>
+  <summary>Novel Algorithms for Remote Sensing</summary>
+  Anything in low-Earth orbit moves through the thermosphere, and uncertainty in the drag these objects experience is the primary driver of uncertainty in their positions. While several methods for determining the neutral temperature from FUV observations exist, we are particularly interested in those that are based on ratios of the intensity of different channels, which are explored, for example, in <a href="https://amt.copernicus.org/articles/14/6917/2021/">this paper</a> by Clayton Cantrall and Tomoko Matsuo and <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2018JA026379">this paper</a> by Yongliang Zhang et al. 
   Currently, we are exploring the application of permanental processes to this problem to allow for extension into a spatial model.
   In permanental processes, the key innovation of the model is that the intensity function \(\lambda(s) = \frac{c}{2}f(s)^2\) where \(f(s)\) is a Gaussian process. Because of this it is possible to use reproducing kernel Hilbert space techniques to fit the intensity from the photon counts, since the point process likelihood function can be regularized by the RKHS norm. If we bin the data and observe \(m_i\) photons in each bin \(R_i\), the fact that a binned Gaussian process remains a Gaussian process allows us to model the intensity in each bin as a squared (element-wise) latent Gaussian vector. This leads to the regularized likelihood
 
@@ -47,9 +41,9 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
   Once \(\vec{f}\) is estimated, a Laplace Approximation to the posterior distribution and moment-matching to the distribution of \(\frac{c}{2}\vec{f}^2\) allows one to derive the conditional distribution of the intensity at any point as a Gamma distribution, and the distribution of the ratio, and any linear function thereof, as a generalized Beta-Prime dsitribution. In our paper currently under review at Atmospheric Measurement Techniques, we demonstrate this algorithm on retrievals of thermospheric effective temperature and show that we are able to obtain accurate estimates of the temperature with good uncertainty quantification while still detecting known spatial structure. The paper is posted <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-5570/">here</a> and is currently under review at Atmospheric Measurement Techniques. This work was also presented at the 2025 AGU fall meeting. The poster is locataed <a href="https://essopenarchive.org/users/988399/articles/1352210-equivalent-kernel-method-for-fuv-inversion-problems-applications-to-nasa-gold-disk-emission-data">here</a>.
    
   For some background, see <a href="https://proceedings.mlr.press/v54/flaxman17a.html">this paper</a> by Flaxman et al and <a href="https://proceedings.mlr.press/v70/walder17a.html">this paper</a> by Walder and Bishop. Details about determining temperature from ratios of FUV channels are available <a href="https://amt.copernicus.org/articles/14/6917/2021/">here</a>.
-</p>
+  The method is implemented in an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. I am currently working on the package documentation, which will be posted soon. It supports the permanental process model for binned point process data, as well as a pointwise model that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
+ </details>
   
- <p>The method is implemented in an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. I am currently working on the package documentation, which will be posted soon. It supports the permanental process model for binned point process data, as well as a pointwise model that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
-</body>
-
+  
+ </body>
 </html>
