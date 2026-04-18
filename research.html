@@ -66,7 +66,7 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
 
    <p>
   For some background, see <a href="https://proceedings.mlr.press/v54/flaxman17a.html">this paper</a> by Flaxman et al and <a href="https://proceedings.mlr.press/v70/walder17a.html">this paper</a> by Walder and Bishop. Details about determining temperature from ratios of FUV channels are available <a href="https://amt.copernicus.org/articles/14/6917/2021/">here</a>.
-  The method is implemented in an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. I am currently working on the package documentation, which will be posted soon. It supports the permanental process model for binned point process data, as well as a pointwise model that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
+  The method is implemented in an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. Some documentation is available <a href="https://arxiv.org/abs/2602.07165">here</a>. It supports the permanental process model for binned point process data,and work is planned for a model for raw point process data that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
  </details>
   <details>
   <details>
@@ -77,10 +77,20 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
   <summary>Analysis of interstellar dust composition</summary>
    <p>In addition to my geophysics work I am currently working with the <a href="https://lasp.colorado.edu/instruments/idex/">Interstellar Dust Experiment</a> team at LASP in CU-Boulder on novel algorithms for estimating elemental abundance ratios from time of flight mass spectroscopy data. This will allow the team to develop uncertainty-aware processing algorithms and assess the impact of detector noise on the observations.  </p> 
   </details>
-     <summary>Approximate Inference for Functions of Negative Binomial Means</summary>
+  <details>
+  <summary>Approximate Inference for Functions of Negative Binomial Means</summary>
    <p>
-     Motivated by my work on photon count data, I am investigating a similar challenge for negative binomial data. This work applies polynomial approximations to the Gamma function to allow the moments of the posterior distribution of a negative binomial mean given data and includes a maximum entropy procedure for estimation. It is able to estimate both positive and negative moments, leading to a truncated Steiltjes moment problem. We are currently working on demonstsrating the method by applying it to estimating ratios and differences of negative binomial mean parameters for use in, for example, clinical trials or remote sensing. 
+     Motivated by my work on photon count data, I am investigating a similar challenge for negative binomial data. This work applies polynomial approximations to the Gamma function to allow the moments of the posterior distribution of a negative binomial mean given data. It is able to estimate both positive and negative moments, leading to a truncated strong Steiltjes moment problem that we propose to solve with maximum entropy techniques. We are currently working on demonstsrating the method by applying it to estimating ratios and differences of negative binomial mean parameters for use in, for example, clinical trials or remote sensing. 
    </p> 
+  </details>
+     <details>
+  <summary>Various smaller projects</summary>
+   <p>
+   Smaller project 1: I am working on a more robust variation of beta-prime regression based on a clased form expression for the Continuous Ranked Probability Score, which is derived along with special cases in <a href="https://arxiv.org/abs/2603.13622">this working paper</a>. This work is ongoing.
+   </p>
+   <p>
+     Smaller project 2: I am also working on formulating a novel model calibration check motivated by a need to quantify model-form uncertainty appearing in several of the previously discussed works. I have only just begun formulating the method and there is a long way to go still.
+   </p>
   </details>
  </body>
 </html>
