@@ -52,23 +52,21 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
   Currently, we are exploring the application of permanental processes to this problem to allow for extension into a spatial model.
   In permanental processes, the key innovation of the model is that the intensity function \(\lambda(s) = \frac{c}{2}f(s)^2\) where \(f(s)\) is a Gaussian process. Because of this it is possible to use reproducing kernel Hilbert space techniques to fit the intensity from the photon counts, since the point process likelihood function can be regularized by the RKHS norm. If we bin the data and observe \(m_i\) photons in each bin \(R_i\), the fact that a binned Gaussian process remains a Gaussian process allows us to model the intensity in each bin as a squared (element-wise) latent Gaussian vector. This leads to the regularized likelihood
   </p>
-   <p>
   $$
  \mathcal{L}(f|m) = \sum_{i} m_i\log\left(\frac{c}{2}\vec{f}_i^2\right)-\frac{c}{2}\left<\vec{f},\vec{f}\right>-\frac{\gamma}{2}\left<\vec{f},\mathbf{K}^{-1}\vec{f} \right>
   $$
+   <p>
   where \(\frac{1}{\gamma}\mathbf{K}\) is the covariance matrix of \(\vec{f}\). The inner products can then be combined into an inner product with respect to an equivalent kernel matrix \(\tilde{\mathbf{K}}^{-1}\) and the solution has the form \(\vec{F}=\tilde{\mathbf{K}}\vec{\alpha}\). While this last step is not structly necessary for binned data, it is critical for raw point proicess data as it turns optimization over a reproducing kernel Hilbert space into one over \(\mathbb{R}^d\). We plan to adapt this method to handle unbinned point process data in the future, and this allows us to handle everything in one data pipeline. 
   Once \(\vec{f}\) is estimated, a Laplace Approximation to the posterior distribution and moment-matching to the distribution of \(\frac{c}{2}\vec{f}^2\) allows one to derive the conditional distribution of the intensity at any point as a Gamma distribution, and the distribution of the ratio, and any linear function thereof, as a generalized Beta-Prime distribution. 
  </p>
    <p>
        In our paper, we demonstrate this algorithm on retrievals of thermospheric effective temperature and show that we are able to obtain accurate estimates of the temperature with good uncertainty quantification while still detecting known spatial structure. The paper is posted <a href="https://egusphere.copernicus.org/preprints/2025/egusphere-2025-5570/">here</a> and is currently under review at Atmospheric Measurement Techniques. This work was also presented at the 2025 AGU fall meeting. The poster is locataed <a href="https://essopenarchive.org/users/988399/articles/1352210-equivalent-kernel-method-for-fuv-inversion-problems-applications-to-nasa-gold-disk-emission-data">here</a>.
- 
    </p>
-
    <p>
   For some background, see <a href="https://proceedings.mlr.press/v54/flaxman17a.html">this paper</a> by Flaxman et al and <a href="https://proceedings.mlr.press/v70/walder17a.html">this paper</a> by Walder and Bishop. Details about determining temperature from ratios of FUV channels are available <a href="https://amt.copernicus.org/articles/14/6917/2021/">here</a>.
   The method is implemented in an <a href="https://github.com/mfleduc/PoissonRatioUQ">R package</a> for use in this and similar problems. Some documentation is available <a href="https://arxiv.org/abs/2602.07165">here</a>. It supports the permanental process model for binned point process data,and work is planned for a model for raw point process data that is similar to the one that appears in <a href="https://hea-www.harvard.edu/astrostat/behr/park_etal_apj.pdf"> this paper (PDF)</a> by Park et al used in a classification problem in x-ray astronomy. This paper directly inspired the work that I am doing, and the permanental process model is an attempt to generalize this into a spatial model.</p> 
- </details>
-  <details>
+  </details> 
+   <details>
   <summary>A physically motivated stochastic model for tropical cyclone wind vector fields</summary>
     <p> Joint with Sandia National Laboratory, I am working on developing a stochastic model for tropical cyclone winds based on data common;y available in track databases such as IBTrACS. The goal of the project is to develop an efficient model that cna be used in risk asssessment for TC-prone areas, and eventually be combined with a precipitation and storm surge model to assess joint risk. This is work in progress. </p>
   </details>
@@ -85,7 +83,7 @@ This gives Parseval-tight frames the reconstruction properties of orthonormal ba
      <details>
   <summary>Various smaller projects</summary>
    <p>
-   Smaller project 1: I am working on a more robust variation of beta-prime regression based on a clased form expression for the Continuous Ranked Probability Score, which is derived along with special cases in <a href="https://arxiv.org/abs/2603.13622">this working paper</a>. This work is ongoing.
+   Smaller project 1: I am working on a more robust variation of beta-prime regression based on a closed form expression for the Continuous Ranked Probability Score, which is derived along with special cases in <a href="https://arxiv.org/abs/2603.13622">this working paper</a>. This work is ongoing.
    </p>
    <p>
      Smaller project 2: I am also working on formulating a novel model calibration check motivated by a need to quantify model-form uncertainty appearing in several of the previously discussed works. I have only just begun formulating the method and there is a long way to go still.
